@@ -98,6 +98,17 @@ namespace WeatherApp
             {
                 using (var mgr = new UpdateManager(UpdateReleasesUrl))
                 {
+                    if (!mgr.IsInstalledApp)
+                    {
+                        MessageBox.Show(
+                            "Update functionality is only available in the installed version of this app.",
+                            "Update Not Available",
+                            MessageBoxButton.OK,
+                            MessageBoxImage.Information
+                        );
+                        return;
+                    }
+
                     UpdateInfo updateInfo = await mgr.CheckForUpdate();
 
                     if (updateInfo != null)
@@ -115,10 +126,10 @@ namespace WeatherApp
                             await mgr.DownloadReleases(updateInfo.ReleasesToApply);
 
                             MessageBox.Show("Installing update...", "Update", MessageBoxButton.OK, MessageBoxImage.Information);
-                            await mgr.ApplyReleases(updateInfo); //.ApplyUpdates
+                            await mgr.ApplyReleases(updateInfo);
 
                             MessageBox.Show("Update installed. Restarting application...", "Update", MessageBoxButton.OK, MessageBoxImage.Information);
-                            UpdateManager.RestartApp(); // รีสตาร์ทแอปพลิเคชันเพื่อให้การอัปเดตมีผล
+                            UpdateManager.RestartApp();
                         }
                     }
                     else
@@ -132,6 +143,7 @@ namespace WeatherApp
                 MessageBox.Show($"An error occurred during update check: {ex.Message}", "Update Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
 
         public class OpenWeatherMapResponse
         {
