@@ -41,6 +41,7 @@ namespace WeatherApp
                 Version currentVersion = Assembly.GetEntryAssembly()?.GetName().Version ?? new Version(1, 0, 0, 0);
 
                 string publicKeyPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, _publicDSAKeyPath);
+            
                 if (!File.Exists(publicKeyPath))
                 {
                     MessageBox.Show($"Public DSA key file not found at: {publicKeyPath}. Updates cannot be securely verified.", "Security Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
