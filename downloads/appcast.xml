@@ -7,10 +7,10 @@
 		<language>en</language>
 
 		<item>
-			<title>Version 1.0.1</title>
+			<title>Version 1.0.1.0</title>
 			<sparkle:releaseNotesLink>
 				<![CDATA[
-          New features in 1.0.1:
+          New features in 1.0.1.0:
           - Improved weather data refresh.
           - Minor UI bug fixes.
           - GitHub Releases integration for updates.
@@ -18,8 +18,8 @@
 			</sparkle:releaseNotesLink>
 			<pubDate>Tue, 03 Jun 2025 10:00:00 +0700</pubDate>
 			<enclosure
-			  url="https://raw.githubusercontent.com/Sakchai/WeatherApp/master/downloads/WeatherApp_1.0.1.zip"
-			  sparkle:version="1.0.1"
+			  url="https://raw.githubusercontent.com/Sakchai/WeatherApp/master/downloads/WeatherApp_1.0.1.0.zip"
+			  sparkle:version="1.0.1.0"
 			  length="1234567"  type="application/octet-stream"
 			  sparkle:dsaSignature="jGs3utqS21M0bNMBrznkdPbzfUq1NVbVKGqd4sU6q40=" />
 		</item>

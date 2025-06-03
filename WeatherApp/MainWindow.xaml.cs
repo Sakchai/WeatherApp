@@ -39,7 +39,7 @@ namespace WeatherApp
             try
             {
                 Version currentVersion = Assembly.GetEntryAssembly()?.GetName().Version ?? new Version(1, 0, 0, 0);
-
+                lblCurrentVersion.Text = currentVersion.ToString();
                 string publicKeyPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, _publicDSAKeyPath);
             
                 if (!File.Exists(publicKeyPath))
@@ -127,7 +127,7 @@ namespace WeatherApp
                 return;
             }
 
-            await _sparkleUpdater.CheckForUpdatesQuietly();
+            await _sparkleUpdater.CheckForUpdatesAtUserRequest();
         }
 
     }
