@@ -1,6 +1,4 @@
-﻿using Squirrel;
-using System.Windows;
-using System.Threading.Tasks; // เพิ่ม using สำหรับ Task
+﻿using System.Windows;
 
 namespace WeatherApp
 {
